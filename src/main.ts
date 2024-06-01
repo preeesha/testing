@@ -34,6 +34,10 @@ app.post("/ingest", (req: Request, res: Response) => {
   });
 });
 
+app.get("/health",(_:Request,res:Response)=>{
+  res.status(200).send({status:200 , message: "health is oky" })
+})
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
